@@ -2,9 +2,12 @@ import io.restassured.RestAssured;
 
 import static io.restassured.RestAssured.given;
 
+
 public class SampleRestRequest {
 
     public static void main(String[] args) {
+
+
 
         RestAssured.baseURI ="https://reqres.in";
 
