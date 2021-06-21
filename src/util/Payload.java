@@ -64,9 +64,6 @@ public class Payload {
     public static String updateUser(String name,String surname,String nickName)
     {
         return "{\n" +
-                "    \"username\": \"john\",\n" +
-                "    \"password\": \"john123\",\n" +
-                "    \"email\": \"john@gmail.com\",\n" +
                 "    \"name\": \""+name+"\",\n" +
                 "    \"surname\": \""+surname+"\",\n" +
                 "    \"chat_nickname\": \""+nickName+"\",\n" +
@@ -83,6 +80,15 @@ public class Payload {
                 "    \"user_groups\": [\n" +
                 "        1\n" +
                 "    ]\n" +
+                "}";
+    }
+
+
+    public static String sampleCreateUserPayload(String name,String job)
+    {
+        return "{\n" +
+                "    \"name\": \""+name+"\",\n" +
+                "    \"job\": \""+job+"\"\n" +
                 "}";
     }
 
