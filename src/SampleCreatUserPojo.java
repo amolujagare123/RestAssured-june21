@@ -1,5 +1,6 @@
 import io.restassured.RestAssured;
 import pojo.CreateUser;
+import pojo.CreateUserResp;
 
 import static io.restassured.RestAssured.given;
 import static util.Payload.createUserPayload;
@@ -15,17 +16,20 @@ public class SampleCreatUserPojo {
 
         CreateUser ob = new CreateUser();
 
-        ob.setName("Tejashree");
-        ob.setJob("Trainer");
+        ob.setName("Avinash");
+        ob.setJob("Test Lead");
 
 
-        given().log().all().header("Content-Type","application/json")
+        CreateUserResp createUserResp = given().log().all().header("Content-Type", "application/json")
                 .body(ob)
-        .when().post("api/users")
-                .then().log().all().assertThat().statusCode(201);
+                .when().post("api/users")
+                .as(CreateUserResp.class);
 
 
-        // apply body and header assertions -- Homework
+        System.out.println("Name="+createUserResp.getName());
+        System.out.println("Job="+createUserResp.getJob());
+        System.out.println("id="+createUserResp.getId());
+        System.out.println("CreatedAt="+createUserResp.getCreatedAt());
 
 
     }
