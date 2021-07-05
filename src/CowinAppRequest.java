@@ -13,10 +13,10 @@ public class CowinAppRequest {
 
         //https://cdn-api.co-vin.in/api/v2/admin/location/states
 
-       String statesResponse =  given().auth().oauth2("amol")
+    /*   String statesResponse =  given().auth().oauth2("amol")
                .when().get("/api/v2/admin/location/states")
-                .then().assertThat().statusCode(403).extract().response().asString();
+                .then().assertThat().statusCode(403).body().extract().response().asString();
         System.out.println(statesResponse);
-
+*/
     }
 }
